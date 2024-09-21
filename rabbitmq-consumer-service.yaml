@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq-consumer-service
+spec:
+  type: NodePort
+  selector:
+    app: rabbitmq-consumer-ex
+  ports:
+    - port: 9494
+      targetPort: 9494
+      nodePort: 31477  # NodePort range is typically between 30000-32767
+
